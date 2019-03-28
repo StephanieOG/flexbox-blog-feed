@@ -1,1 +1,25 @@
-<!-- HTML & HubL code goes here -->
+{# Set Blog Posts #}
+{% set number_of_posts = 3 %}
+{% set posts = blog_recent_posts(module.choose_blog, number_of_posts) %}
+{% if module.specific_tag_topic %}
+	{% set posts = blog_recent_topic_posts(module.choose_blog, module.blog_tag_slug, number_of_posts) %}
+{% endif %}
+
+<section class="blog-feed">
+  <ul class="blog-posts">
+    {% for post in posts %}
+    <li class="blog-post">
+      <div class="blog-post-inner">
+        <div class="blog-post-image" style="background-image: url({{ resize_image_url( post.featured_image,0,350 ) }});"></div>
+        <div class="blog-post-content-wrapper">
+          <a class="blog-post-title" href="{{ post.absolute_url }}"><h3>{{ post.name }}</h3></a>
+          <a class="blog-post-author" href="{{ group.absolute_url }}/author/{{ post.blog_post_author.slug }}">{{ post.blog_post_author.display_name }}</a>
+          <div class="blog-post-date">{{ post.publish_date_localized }}</div>
+          <div class="blog-post-summary">{{ post.post_summary }}</div>
+          <a class="blog-post-read-more" href="{{ post.absolute_url }}">Read More</a>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

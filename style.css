@@ -1,1 +1,38 @@
-/* CSS code goes here */
+/* Container */
+.blog-posts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* Post */
+.blog-post {
+  flex-basis: 33.333333333%; /* Sets post width */
+  display: flex; /* Sets even heights */
+}
+/* Post Inner: allows margin around content */
+.blog-post .blog-post-inner {
+  width: 100%;
+  background-color: #ebebeb; /* Background Colour */
+  margin: 10px; /* Space around post */
+}
+/* Post Image - Background Image */
+.blog-post .blog-post-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 250px; /* Image Height */
+}
+/* Post Content */
+.blog-post .blog-post-content-wrapper {
+  padding: 20px; /* Padding around blog post content */
+}
+/* Responsive Breakpoints based on HubSpot Boilerplate CSS */
+@media (max-width: 767px) {
+  .blog-post { flex-basis: 50%; }
+}
+@media (max-width: 479px) {
+  .blog-post { flex-basis: 100%; }
+}

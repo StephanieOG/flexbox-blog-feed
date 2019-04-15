@@ -2,7 +2,7 @@
 {% set number_of_posts = 3 %}
 {% set posts = blog_recent_posts(module.choose_blog, number_of_posts) %}
 {% if module.specific_tag_topic %}
-	{% set posts = blog_recent_topic_posts(module.choose_blog, module.blog_tag_slug, number_of_posts) %}
+	{% set posts = blog_recent_topic_posts(module.choose_blog, module.tag, number_of_posts) %}
 {% endif %}
 
 <section class="blog-feed">

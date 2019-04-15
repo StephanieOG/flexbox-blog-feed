@@ -14,7 +14,7 @@ In the module basic module, there are only three fields:
 
 - Choose Blog (Blog field)
 - Use posts from a specific tag/topic? (Boolean field)
-- Blog Tag Slug (Text field)
+- Tag (tag field)
 
 ![Module Preview](https://github.com/StephanieOG/flexbox-blog-feed/blob/master/screenshots/flexbox-blog-feed-module-preview.png?raw=true "Module Preview")
 
